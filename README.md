@@ -26,3 +26,10 @@ This project utilizes the following technologies:
 ---
 
 ## 📂 Repository Structure
+francis.github.io/
+│
+├── .github/                # GitHub configuration files
+├── stylesheets/            # CSS files for styling
+├── index.html              # Main entry point for the website
+├── profile_pic.jpg         # Profile picture used on the website
+├── README.md               # This file
