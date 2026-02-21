@@ -1,36 +1,19 @@
-# Dependencies
+# Node modules
 node_modules/
-package-lock.json
-yarn.lock
 
-# Build outputs
-dist/
-build/
-*.min.css
-*.min.js
-
-# OS files
+# Mac OS
 .DS_Store
-Thumbs.db
-.env
-.env.local
 
-# Editor configs
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
+# Swap files
 *.swp
 *.swo
-*~
 
-# Testing
-.nyc_output/
-coverage/
-test-results/
+# IDEs and editors
+.vscode/
+.idea/
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Build directories
+/dist/
+/build/
+
+# Other development artifacts
