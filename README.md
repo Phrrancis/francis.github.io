@@ -4,7 +4,7 @@ Welcome to the repository for my personal website! 🚀
 
 This website serves as my online portfolio where you can learn more about me, explore my work, and stay updated on what I’m currently focused on.  
 
-Feel free to visit the live website here: [Francis Awagu's Personal Website](https://example.com) (Replace with your actual deployed link).  
+Feel free to visit the live website here: [Francis Awagu's Personal Website](https://francis.github.io).  
 
 ---
 

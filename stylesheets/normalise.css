@@ -33,4 +33,5 @@ canvas,
 progress,
 video {
     display: inline-block; /* Consistency across browsers */
-    vertical-align: baseline
+    vertical-align: baseline;
+}
