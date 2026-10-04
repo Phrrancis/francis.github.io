@@ -3,55 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <meta name="author" content="Francis Awagu">
-    <meta name="description" content="Portfolio of Francis Awagu, Technical Product Manager based in Sweden.">
+    <meta name="description" content="Portfolio and blog of Francis Awagu, Technical Product Manager based in Sweden.">
 
     <!-- Open Graph / Social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://francis.github.io/">
     <meta property="og:title" content="Francis Awagu | Technical Product Manager">
-    <meta property="og:description" content="Portfolio of Francis Awagu, Technical Product Manager based in Sweden.">
+    <meta property="og:description" content="Portfolio and blog of Francis Awagu, Technical Product Manager based in Sweden.">
     <meta property="og:image" content="https://francis.github.io/profile_pic.jpg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@Awagufrancis">
     <meta name="twitter:title" content="Francis Awagu | Technical Product Manager">
-    <meta name="twitter:description" content="Portfolio of Francis Awagu, Technical Product Manager based in Sweden.">
+    <meta name="twitter:description" content="Portfolio and blog of Francis Awagu, Technical Product Manager based in Sweden.">
     <meta name="twitter:image" content="https://francis.github.io/profile_pic.jpg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://francis.github.io/">
+    <link rel="alternate" type="application/rss+xml" title="Francis Awagu's Blog" href="/feed.xml">
 
-    <link rel="stylesheet" href="stylesheets/normalise.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" href="/stylesheets/normalise.css" media="screen">
+    <link rel="stylesheet" href="/stylesheets/stylesheet.css" media="screen">
+    <script src="/js/theme.js"></script>
 
     <!-- Google Fonts with preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto+Mono:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
           rel="stylesheet">
 
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>Francis Awagu | Technical Product Manager</title>
 </head>
 <body>
     <a class="skip-link" href="#content">Skip to content</a>
 
     <div class="main-content">
+        <div class="top-bar">
+            <nav class="site-nav" aria-label="Site">
+                <a href="/" aria-current="page">Home</a>
+                <a href="/blog/">Blog</a>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                <span class="icon-moon" aria-hidden="true">☾</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+        </div>
+
         <header>
             <div class="site-header">
-                <img src="profile_pic.jpg" alt="Portrait of Francis Awagu" width="80" height="80" loading="eager" class="profile-pic">
+                <img src="/profile_pic.jpg" alt="Portrait of Francis Awagu" width="80" height="80" loading="eager" class="profile-pic">
                 <div class="header-text">
                     <h1>👋 Hi! I'm Francis</h1>
                 </div>
             </div>
             <p>
-                A Technical Product Manager based in Stockholm, Sweden. I currently lead a team of 19 engineers at
-                <a href="https://worldline.com/en-gb/home/main-navigation/solutions/merchants/payment-orchestration"
-                   target="_blank" rel="noopener noreferrer external">Worldline</a> building a scalable Payment Orchestration Platform.
+                A Technical Product Manager based in Stockholm, Sweden. I lead a data science team at
+                <a href="https://worldline.com/" target="_blank" rel="noopener noreferrer external">Worldline</a>
+                building anomaly detection, fraud prevention, and KYC solutions for payments.
             </p>
             <p>
-                While struggling to complete a master's in Econometrics at
-                <a href="https://www.du.se/en" target="_blank" rel="noopener noreferrer external">Dalarna University</a>, I work on meaningful projects.
+                Alongside work, I'm pursuing a master's in micro- and macroeconomics at
+                <a href="https://www.sh.se/english" target="_blank" rel="noopener noreferrer external">Södertörn University</a>
+                and studying international politics at
+                <a href="https://www.su.se/english/" target="_blank" rel="noopener noreferrer external">Stockholm University</a>.
             </p>
             <p>Say hi:
                 <a href="https://twitter.com/Awagufrancis" target="_blank" rel="noopener noreferrer external">@Awagufrancis</a> or
@@ -62,6 +78,24 @@
         <hr>
 
         <main id="content" tabindex="-1">
+            <section aria-labelledby="writing">
+                <h2 id="writing">Writing</h2>
+                <!-- Keep the newest 3 posts here. Full list lives at /blog/ -->
+                <ul class="post-list">
+                    <li>
+                        <span class="date"><time datetime="2023-01-20">20 Jan 2023</time></span>
+                        <a href="/blog/2023/great-career-advice-from-dara-khosrowshahi.html">Great Career Advice from Dara Khosrowshahi (Uber CEO)</a>
+                    </li>
+                    <li>
+                        <span class="date"><time datetime="2018-12-04">4 Dec 2018</time></span>
+                        <a href="/blog/2018/heart-of-a-dog-by-mikhail-bulgakov.html">Heart of a Dog (1925), by Mikhail Bulgakov (Ideological Analysis)</a>
+                    </li>
+                </ul>
+                <a class="read-more" href="/blog/">All posts →</a>
+            </section>
+
+            <hr>
+
             <section aria-labelledby="side-projects">
                 <h2 id="side-projects">Side Projects</h2>
                 <ul>
@@ -73,6 +107,7 @@
         </main>
 
         <footer>
+            <p>© 2026 Francis Awagu · <a href="/feed.xml">RSS</a></p>
             <script defer data-domain="francis.github.io" src="https://plausible.io/js/script.js"></script>
         </footer>
     </div>

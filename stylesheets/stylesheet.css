@@ -1,4 +1,47 @@
 /* ============================================================
+   Theme tokens
+   Light is the default. Dark applies via system preference or
+   the manual toggle (data-theme="dark" on <html>).
+   ============================================================ */
+:root {
+    color-scheme: light;
+    --bg: #FBFBFB;
+    --bg-elevated: #FFFFFF;
+    --text: #111;
+    --text-muted: #666;
+    --link: #005C9C;
+    --rule: #ddd;
+    --accent: indianred;
+    --code-bg: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --bg: #121416;
+        --bg-elevated: #1b1e21;
+        --text: #e6e6e6;
+        --text-muted: #9a9a9a;
+        --link: #7cc0ff;
+        --rule: #2e3236;
+        --accent: #e07b7b;
+        --code-bg: #1f2327;
+    }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #121416;
+    --bg-elevated: #1b1e21;
+    --text: #e6e6e6;
+    --text-muted: #9a9a9a;
+    --link: #7cc0ff;
+    --rule: #2e3236;
+    --accent: #e07b7b;
+    --code-bg: #1f2327;
+}
+
+/* ============================================================
    Base reset
    ============================================================ */
 *,
@@ -15,7 +58,7 @@
     top: -100%;
     left: 0;
     padding: 0.5rem 1rem;
-    background: #005C9C;
+    background: var(--link);
     color: #fff;
     font-weight: bold;
     z-index: 100;
@@ -32,10 +75,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto Mono', monospace;
-    font-size: 1rem;          /* 16px base — readable on all screens */
+    font-size: 1rem;
     line-height: 1.6;
-    color: #111;
-    background-color: #FBFBFB;
+    color: var(--text);
+    background-color: var(--bg);
     -webkit-text-size-adjust: 100%;
 }
 
@@ -52,7 +95,7 @@ h2 {
 
 h2 span {
     font-size: 0.8rem;
-    color: #bbb;
+    color: var(--text-muted);
     font-weight: normal;
 }
 
@@ -60,9 +103,8 @@ h2 span {
    Links
    ============================================================ */
 a {
-    color: #005C9C;
+    color: var(--link);
     text-decoration: none;
-    /* Larger tap target on touch devices */
     display: inline;
 }
 
@@ -71,7 +113,7 @@ a:hover {
 }
 
 a:focus-visible {
-    outline: 2px solid #005C9C;
+    outline: 2px solid var(--link);
     outline-offset: 3px;
     border-radius: 2px;
 }
@@ -81,12 +123,11 @@ a:focus-visible {
    ============================================================ */
 .main-content {
     margin: 0 auto;
-    padding: 1.5rem 1rem;     /* tight padding on small screens */
+    padding: 1.5rem 1rem;
     max-width: 100%;
     width: 100%;
 }
 
-/* Tablet and up */
 @media screen and (min-width: 40em) {
     .main-content {
         padding: 2.5rem 2rem;
@@ -94,12 +135,70 @@ a:focus-visible {
     }
 }
 
-/* Desktop */
 @media screen and (min-width: 60em) {
     .main-content {
         padding: 4rem 3rem;
         max-width: 48rem;
     }
+}
+
+/* ============================================================
+   Top bar — site nav + theme toggle
+   ============================================================ */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-nav {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.875rem;
+}
+
+.site-nav a[aria-current="page"] {
+    color: var(--text);
+    font-weight: bold;
+}
+
+.theme-toggle {
+    appearance: none;
+    border: 1px solid var(--rule);
+    background: var(--bg-elevated);
+    color: var(--text);
+    border-radius: 999px;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--link);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+}
+
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: inline; }
+
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: inline; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
 }
 
 /* ============================================================
@@ -121,7 +220,6 @@ a:focus-visible {
     display: block;
 }
 
-/* On wider screens, put pic and text side by side */
 @media screen and (min-width: 40em) {
     .site-header {
         flex-direction: row;
@@ -146,7 +244,6 @@ a:focus-visible {
     margin: 1.25rem 0;
 }
 
-/* On mobile, the first paragraph after the header gets less top margin */
 .site-header + p,
 header > p:first-of-type {
     margin-top: 0.75rem;
@@ -154,7 +251,7 @@ header > p:first-of-type {
 
 .main-content strong {
     font-weight: normal;
-    border-bottom: 2px solid indianred;
+    border-bottom: 2px solid var(--accent);
 }
 
 /* ============================================================
@@ -175,46 +272,147 @@ header > p:first-of-type {
    ============================================================ */
 hr {
     border: none;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--rule);
     margin: 1.25rem 0;
 }
 
 /* ============================================================
-   Navigation links
-   ============================================================ */
-a.nav {
-    display: inline-block;
-    margin: 1.5rem 0;
-    font-weight: bold;
-    /* Minimum 44px tap target height */
-    padding: 0.5rem 0;
-    min-height: 44px;
-    line-height: 44px;
-}
-
-/* ============================================================
-   Date
+   Date / meta text
    ============================================================ */
 .date {
-    color: #bbb;
-    font-weight: bold;
-    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
     display: inline-block;
-    margin-right: 0.5rem;
 }
 
 /* ============================================================
-   Posts
+   Post list (blog index + homepage "Writing" section)
+   ============================================================ */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.main-content .post-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin: 0 0 1rem;
+}
+
+.post-list .date {
+    font-variant-numeric: tabular-nums;
+}
+
+@media screen and (min-width: 40em) {
+    .main-content .post-list li {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 1rem;
+    }
+
+    .post-list .date {
+        flex: 0 0 7rem;
+    }
+}
+
+.post-list .summary {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   Post article
    ============================================================ */
 .post {
     line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-header h1 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+}
+
+.post-header .date {
+    display: block;
+}
+
+.post h2 {
+    font-size: 1.15rem;
+    margin: 2rem 0 0.75rem;
+}
+
+.post h3 {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.5rem;
 }
 
 .post img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+.post figure {
+    margin: 1.5rem 0;
+}
+
+.post figcaption {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.post blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    border-left: 3px solid var(--accent);
+    color: var(--text-muted);
+}
+
+.post code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+    background: var(--code-bg);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+}
+
+.post pre {
+    background: var(--code-bg);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    line-height: 1.5;
+}
+
+.post pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.875rem;
+}
+
+.post-footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.9rem;
 }
 
 /* ============================================================
@@ -223,4 +421,6 @@ a.nav {
 footer {
     margin-top: 2rem;
     padding-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
