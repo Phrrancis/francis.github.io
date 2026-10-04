@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Francis Awagu's Blog</title>
-    <link>https://francis.github.io/blog/</link>
+    <link>https://phrrancis.github.io/francis.github.io/blog/</link>
     <description>Notes on payments, data science, product management, and economics.</description>
     <language>en</language>
-    <atom:link href="https://francis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://phrrancis.github.io/francis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
 
     <!-- Add new posts at the TOP. Update lastBuildDate above. -->
     <item>
       <title>Great Career Advice from Dara Khosrowshahi (Uber CEO)</title>
-      <link>https://francis.github.io/blog/2023/great-career-advice-from-dara-khosrowshahi.html</link>
-      <guid isPermaLink="true">https://francis.github.io/blog/2023/great-career-advice-from-dara-khosrowshahi.html</guid>
+      <link>https://phrrancis.github.io/francis.github.io/blog/2023/great-career-advice-from-dara-khosrowshahi.html</link>
+      <guid isPermaLink="true">https://phrrancis.github.io/francis.github.io/blog/2023/great-career-advice-from-dara-khosrowshahi.html</guid>
       <pubDate>Fri, 20 Jan 2023 08:15:00 +0000</pubDate>
       <description>Six takeaways from Ryan Roslansky's interview with Uber CEO Dara Khosrowshahi on careers, patience, and staying open to opportunity.</description>
     </item>
     <item>
       <title>Heart of a Dog (1925), by Mikhail Bulgakov (Ideological Analysis)</title>
-      <link>https://francis.github.io/blog/2018/heart-of-a-dog-by-mikhail-bulgakov.html</link>
-      <guid isPermaLink="true">https://francis.github.io/blog/2018/heart-of-a-dog-by-mikhail-bulgakov.html</guid>
+      <link>https://phrrancis.github.io/francis.github.io/blog/2018/heart-of-a-dog-by-mikhail-bulgakov.html</link>
+      <guid isPermaLink="true">https://phrrancis.github.io/francis.github.io/blog/2018/heart-of-a-dog-by-mikhail-bulgakov.html</guid>
       <pubDate>Tue, 04 Dec 2018 14:35:41 +0000</pubDate>
       <description>Bulgakov's 1925 novella as satire of the New Soviet Man and Soviet eugenics. A chapter-by-chapter reading, republished from the Embryo Project Encyclopedia.</description>
     </item>
